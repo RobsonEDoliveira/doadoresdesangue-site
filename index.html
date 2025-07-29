@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Redirecionamento</title>
+  <title>Redirecionando...</title>
+  <meta http-equiv="refresh" content="10;url=https://doadoresdesangue.ong.br/">
   <style>
     body {
       margin: 0;
@@ -35,33 +36,36 @@
 
     p {
       font-size: 1.1rem;
-      margin-bottom: 30px;
+      margin-bottom: 10px;
       color: #555;
     }
 
-    a.button {
-      background-color: #4a90e2;
-      color: #ffffff;
-      padding: 12px 24px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1rem;
-      transition: background 0.3s ease;
-      display: inline-block;
-    }
-
-    a.button:hover {
-      background-color: #357ab7;
+    .timer {
+      margin-top: 20px;
+      font-size: 0.95rem;
+      color: #888;
     }
   </style>
+  <script>
+    let seconds = 10;
+    const timerElement = () => document.getElementById("countdown");
+    
+    const countdown = setInterval(() => {
+      seconds--;
+      if (timerElement()) {
+        timerElement().textContent = seconds;
+      }
+      if (seconds <= 0) clearInterval(countdown);
+    }, 1000);
+  </script>
 </head>
 <body>
   <div class="container">
-    <h1>Este não é o site oficial</h1>
-    <p>Acesse o nosso novo domínio oficial clicando no botão abaixo:</p>
+    <h1>Redirecionando para o site oficial...</h1>
+    <p>Nosso novo domínio é:</p>
     <p><strong>https://doadoresdesangue.ong.br/</strong></p>
-    <a class="button" href="https://doadoresdesangue.ong.br/" target="_blank">Ir para o site oficial</a>
+    <p class="timer">Você será redirecionado automaticamente em <span id="countdown">10</span> segundos.</p>
+    <p>Se não for redirecionado, <a href="https://doadoresdesangue.ong.br/" target="_blank">clique aqui</a>.</p>
   </div>
 </body>
 </html>
